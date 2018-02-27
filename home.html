@@ -1,50 +1,41 @@
-<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>NYT Search</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Tables Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
 
-    <body>
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-3">New York Times Search</h1>
-            <p class="lead">NYTimes.com Search - The New York Times
+<body data-gr-c-s-loaded="true">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <span class="glyphicon glyphicon-fire"></span> Sexy Restrawnt</h1>
+            <hr>
+            <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
             <br>
-            Using API and AJAX forumla to find articles
-            </p>
-          </div>
+            <div class="text-center">
+                <a href="/tables">
+                    <button type="button" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-list-alt"></span> View Tables</button>
+                </a>
+                <a href="/reserve">
+                    <button type="button" class="btn btn-lg btn-danger">
+                        <span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
+                </a>
+            </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/tables">API Table Link</a> |
+                    <a href="/api/waitlist">API Wait List</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
 
-        <form>
-          <div class="form-group">
-            <label for="">Search Term</label>
-            <input type="text" class="" id="search-term" placeholder="Trump">
-          </div>
-          <div class="form-group">
-              <label for="">Number of records to retrieve</label>
-              <input type="text" class="" id="num-records" placeholder="5">
-          </div>
-          <div class="form-group">
-              <label for="">Start Year</label>
-              <input type="text" class="" id="start-year" placeholder="2016">
-          </div>
-          <div class="form-group">
-            <label for="">End Year</label>
-            <input type="text" class="" id="end-year" placeholder="2018">
-          </div>
-        </form>
-        <button type="button" class="btn btn-secondary" id="search">Search</button>
-        <button type="button" class="btn btn-secondary" id="clear">Clear results</button>
-
-        <div class="container">
-            <div id="results"></div>
-        </div>
-
-        <script src="./assets/javascript/search.js"></script>
-    </body>
 </html>
