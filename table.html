@@ -48,3 +48,31 @@
         </footer>
     </div>
 </body>
+
+<script>
+
+    $.get("/api/tables", function(data){
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+            var tableSection = $("<div>");
+            tableSection.addClass("well");
+            tableSection.attr("id", "character-well-" + i);
+            $("#tableSection").append(tableSection);
+            $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
+            $("#character-well-" + i).append("<h2>" + data[i].uniqueid + "</h2>");            
+        }
+    });
+
+    // $.get("/api/waitlist", function (data) {
+    //         console.log(data);
+    //         for (let i = 0; i < data.length; i++) {
+    //             var tableSection = $("<div>");
+    //             tableSection.addClass("well");
+    //             tableSection.attr("id", "character-well-" + i);
+    //             $("#waitlistSection").append(tableSection);
+    //             $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
+    //             $("#character-well-" + i).append("<h2>" + data[i].uniqueid + "</h2>");
+    //         }
+    //     });
+
+</script>

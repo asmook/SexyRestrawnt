@@ -27,12 +27,12 @@ app.get("/home", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/api/:characters", function(req, res) {
-  var chosen = req.params.characters;
+app.get("/api/:banana", function(req, res) {
+  var chosen = req.params.banana;
 
   if (chosen === "tables") {
     console.log(chosen);
-    res.json(reservations)
+    res.json(reservations);
   } else if (chosen === "waitlist") {
     res.json(waitlist)
   }
@@ -45,6 +45,7 @@ app.post("/api/new", function(req, res) {
   reservations.push(newReserve);
 } else {
   waitlist.push(newReserve);
+
 }
 });
 
