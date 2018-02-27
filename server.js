@@ -6,23 +6,10 @@ var PORT = process.env.PORT || 6969;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var reservations = [
-  // {
-  //   Name: "yoda",
-  //   phone: "303030303",
-  //   email: "Jedi Master",
-  //   unique: 900,
-  // }
-];
+var reservations = [];
 
-var waitlist = [
-  // {
-  //   Name: "yoda",
-  //   phone: "303030303",
-  //   email: "Jedi Master",
-  //   unique: 900,
-  // }
-]
+var waitlist = []
+
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
@@ -49,6 +36,16 @@ app.get("/api/:characters", function(req, res) {
   } else if (chosen === "waitlist") {
     res.json(waitlist)
   }
+});
+
+app.post("/api/new", function(req, res) {
+  var newReserve = req.body
+  console.log(newReserve)
+  if (reservations.length < 5) {
+  reservations.push(newReserve);
+} else {
+  waitlist.push(newReserve);
+}
 });
 
 app.listen(PORT, function() {
